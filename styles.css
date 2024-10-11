@@ -1,0 +1,13 @@
+head{text-align: center; display: grid; background-color: gray; padding: 5px; border: 1px solid black;}
+
+#cp {color: red; text-align: center; display: grid; background-color: yellow; padding: 5px; border: 1px solid red; }
+
+h1{color: blue; text-align: center; border: 5px solid blue;}
+p{text-align: center;}
+
+a.linkstyle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: green;
+}
