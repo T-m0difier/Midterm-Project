@@ -1,91 +1,73 @@
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Orbital Burgers Home</title>
+	
+    <style>
+        body {
+            background-image: url('Meateor Burgers.PNG'); /* Background image */
+            background-size: contain;
+            background-position: center;
+			background-repeat: repeat;
+            height: 100vh; /* Full viewport height */
+			background-color: black;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px; /* Limit the width of the content area */
+            margin: 20px auto; /* Center the content area */
+            position: relative;
+        }
+    </style>
+
 </head>
 <body>
-<h1>Welcome to [Something] Labs</h1>
-<h3>A military and civilian protection experimental technologies lab for unethical experiments & research.</h3>
-<p> 
-At [Something] Labs, we contact experiments, somewhat unethical in nature, for military and civilian applications 
-<br/>Whether you are looking for shrink rays, zombie-powered generators and other experimental 
-technologies, we are your go-to destination.</p>
-<p>So please have a look at the research and technologies we are currently contacting.</p>
-<table width="500"
-			cellpadding="10"
-			cellspacing="10">
-	<tr>
-		<th>Category</th>
-		<th>Projects</th>
-		<th>Status</th>
-	</tr>
-	<tr>
-		<th rowspan="2">D.E.W. Division</th>
-		<td>S.H.R.I.N.K. Ray</td> 
-		<td>Incomplete</td>
-	</tr>
-	<tr>
-		<td>Pyro-electric Beam</td> 
-		<td>Failed</td>
-	</tr>
-	
-	<tr>
-		<th rowspan="2">Cybernetics Division</th>
-		<td>Metal-lodon</td>
-		<td>Incomplete</td>
-	</tr>
-	<tr>
-		<td>Scrapper Drone</td>
-		<td>Completed</td>
-	</tr>
-	
-	<tr>
-		<th rowspan="3"> Threat Neutralization Division</th>
-		<td>Something</td>
-		<td>Completed</td>
-	</tr>
-	<tr>
-		<td>Something</td>
-		<td>Incomplete</td>
-	</tr>
-	<tr>
-		<td>Something</td>
-		<td>Completed</td>
-	</tr>
-	
-	<tr>
-		<th rowspan="4">Armament Research Division</th>
-		<td>Something</td> 
-		<td>Failed</td>
-	</tr>
-	<tr>
-		<td>Something</td>
-		<td>Completed</td>
-	</tr>
-	<tr>
-		<td>Something</td>
-		<td>Incomplete</td>
-	</tr>
-	<tr>
-		<td>Something</td>
-		<td>Completed</td>
-	</tr>
-</table>
-<p>You want more information on our projects? <br/> Then go to:</p>
-<button onclick="location.href='Projects.html'">Project Archive</button>
-<p>If you are interested in helping us managing those projects or providing us with new ideas, then go to:</p>
-<button onclick="location.href='Tasks.html'">Manage Projects</button>
-
-
-<section>
-    <h2>Latest Activity</h2>
-    <ul id="latest-activity-list">
-        <!-- Dynamic content will be inserted here -->
-    </ul>
-</section>
-
-<a href="Projects.html" class= "linkstyle">Project Archive</a>
-<a href="Tasks.html" class= "linkstyle">Task Management</a>
-<a href="About.html" class= "linkstyle">About Us</a>
-<a href="Contact.html" class= "linkstyle">Contact Us</a>
-
+<!--navbar starts here-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">
+		<img src="Proton Burger.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
+		<span class="ml-2">Orbital Burgers</span>
+		</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Tasks.html">Task Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About.html">About</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!--ends here-->
+<!--90% of the webpage starts here***-->
+	<div class="container">
+        <h1 class="text-center">Welcome to Orbital Burgers</h1>
+		<h3 class="text-center">Where your favorite food arrives with force!</h3>
+        <p class="text-center"> </p>
+        <button class="btn btn-primary">Click Me</button>
+    </div>
+<!--ends here***-->	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
