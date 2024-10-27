@@ -1,13 +1,44 @@
-head{text-align: center; display: grid; background-color: gray; padding: 5px; border: 1px solid black;}
+body {
+    background-image: url('Meateor Burgers.PNG'); /* Background image */
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limit the width of the content area */
+    margin: 20px auto; /* Center the content area */
+    position: relative;
+}
+body.dark-mode {
+    background-color: #343a40; /* Dark mode background */
+    color: white; /* Dark mode text color */
+}
+body.dark-mode .container {
+    background-color: rgba(52, 58, 64, 0.8); /* Dark mode container */
+}
+.navbar-dark-mode {
+    background-color: #343a40; /* Dark background for navbar */
+    color: white; /* Text color for dark navbar */
+}
 
-#cp {color: red; text-align: center; display: grid; background-color: yellow; padding: 5px; border: 1px solid red; }
 
-h1{color: blue; text-align: center; border: 5px solid blue;}
-p{text-align: center;}
 
-a.linkstyle{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: green;
+/* Dark Mode Styles for the modal*/
+.dark-mode .modal-content {
+    background-color: #343a40; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+.dark-mode .modal-header {
+    border-bottom: 1px solid #474d51; /* Darker border for header */
+}
+
+.dark-mode .modal-footer {
+    border-top: 1px solid #474d51; /* Darker border for footer */
 }

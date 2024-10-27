@@ -3,36 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing some of the Bootstrap themes -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script> <!-- Link to the JS file containing the JQuery code-->
     <title>Orbital Burgers Home</title>
-	
-    <style>
-        body {
-            background-image: url('Meateor Burgers.PNG'); /* Background image */
-            background-size: contain;
-            background-position: center;
-			background-repeat: repeat;
-            height: 100vh; /* Full viewport height */
-			background-color: black;
-            margin: 0;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px; /* Limit the width of the content area */
-            margin: 20px auto; /* Center the content area */
-            position: relative;
-        }
-    </style>
-
 </head>
 <body>
 <!--navbar starts here-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <a class="navbar-brand" href="#">
-		<img src="Proton Burger.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
-		<span class="ml-2">Orbital Burgers</span>
-		</a>
+            <img src="flaming Burger.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
+            <span class="ml-2">Orbital Burgers</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,24 +32,42 @@
                 <li class="nav-item">
                     <a class="nav-link" href="About.html">About</a>
                 </li>
-				<li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
             </ul>
-        </div>
+            <button id="toggleButton" class="btn btn-secondary ml-3">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+					<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+				</svg>
+				Toggle Dark Mode</button>
+		</div>
     </nav>
 <!--ends here-->
-<!--90% of the webpage starts here***-->
-	<div class="container">
+<!--90% of the webpage starts here-->
+    <div class="container">
         <h1 class="text-center">Welcome to Orbital Burgers</h1>
-		<h3 class="text-center">Where your favorite food arrives with force!</h3>
-        <p class="text-center"> </p>
-        <button class="btn btn-primary">Click Me</button>
+        <h3 class="text-center">Where your favorite food comes falling from the sky.</h3>
+        <p class="text-center">
+            At Orbital Burgers, we are dedicated to providing you with the best fast food, no matter where you are in the world. <br />
+            Explore our extensive range of burgers, sides, drinks, and desserts by viewing our dedicated 
+            <a href="Menu.html">Menu</a>.
+        </p>
+		
+		<p class="text-center">Ready to order? Or have you come to help us run this joint? In either case you have to go to<br/>
+        <a href="Tasks.html" class="btn btn-primary">Task Management</a></p>
+		<h2 class="text-center">Latest Activity</h2>
+        <ul id="activityList" class="list-group">
+        </ul>
+		
     </div>
-<!--ends here***-->	
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
