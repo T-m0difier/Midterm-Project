@@ -3,36 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Orbital Burgers Staff Info</title>
-	
-    <style>
-        body {
-            background-image: url('Meateor Burgers.PNG'); /* Background image */
-            background-size: contain;
-            background-position: center;
-			background-repeat: repeat;
-            height: 100vh; /* Full viewport height */
-			background-color: black;
-            margin: 0;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px; /* Limit the width of the content area */
-            margin: 20px auto; /* Center the content area */
-            position: relative;
-        }
-    </style>
-
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing some of the Bootstrap themes -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script> <!-- Link to the JS file containing the JQuery code-->
+    <title>About Orbital Burgers</title>
 </head>
 <body>
 <!--navbar starts here-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <a class="navbar-brand" href="#">
-		<img src="Proton Burger.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
-		<span class="ml-2">Orbital Burgers</span>
-		</a>
+            <img src="flaming Burger.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
+            <span class="ml-2">Orbital Burgers</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,24 +32,58 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="About.html">About</a>
                 </li>
-				<li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
             </ul>
-        </div>
+            <button id="toggleButton" class="btn btn-secondary ml-3">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+					<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+				</svg>
+				Toggle Dark Mode</button>
+		</div>
     </nav>
 <!--ends here-->
-<!--90% of the webpage starts here***-->
-	<div class="container">
-        <h1 class="text-center">Welcome to Orbital Burgers</h1>
-		<h3 class="text-center">Where your favorite food arrives with force!</h3>
-        <p class="text-center"> </p>
-        <button class="btn btn-primary">Click Me</button>
+<!--Gneral information and Features list start here-->
+<div class="container">
+    <h2 class="text-center">About Our Unique Burger Joint</h2>
+    <p class="justify-text">
+        Here at Orbital Burgers, we believe that great fast-food services should also include a great food delivery system, capable of delivering orders worldwide.
+        So, we took that thought to a whole new level.<br/>
+        After the 2nd Allied Victory against the Soviets, the entire network of Soviet magnetic satellites was decommissioned and sold at an auction.
+        Since we won that auction, we decided to open a burger joint in Chile (where the satellite command center is located) and utilize it for food delivery purposes!<br/><br/>
+        <strong>How it works:</strong> You make an order, we produce that order, and place it inside a specialized magnetic food container (capable of withstanding space conditions and orbital re-entry).
+		Then, we use one of our satellites to lift the order into space, set the coordinates you provided, and the satellite sends the container to your location, by using gravity.
+        That specialized container uses two GPS-handled parachutes that open after reaching a certain altitude, ensuring your order arrives at your location unscathed.<br/>
+		After each order, the containers are returned back to us the same way they were brought to you in order to be reused for future orders.<br/><br/>
+		<strong>Purpose:</strong> Our goal is to provide and deliver great quality fast-food in a worldwide scale, 
+		while also reducing the time a hyper-atlandic (or pacific) order would take in order to reach it's destination down to a maximum of 30 minutes! (45 during holidays)
+    </p>
+    <h4 class="text-center">Features:</h4>
+    <ul class="justify-text">
+        <li><strong>Innovative Global Delivery Method:</strong> We use magnetic satellites to deliver orders quickly, efficiently and securely worldwide.</li>
+        <li><strong>Precision According to Input:</strong> Our satellites utilize coordinates (provided by you), as the delivery drop-off point.</li>
+        <li><strong>Quality Fast-Food:</strong> We make our food with top quality ingredients and we focus on bold flavors, so that we make your meal unforgettable.</li>
+		<li><strong>Goodies Gallore!:</strong> From signature burgers, to a variety of sides, drinks and desserts, we have something for everyone. For more information, check our dedicated <a href="Menu.html">Menu</a>.</li>
+    </ul>
+<!--end here-->
+<!--Grid card with infor about the benefactor starts here-->
+	<h4 class="text-center">Meet Our Benefactor:</h4>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card mb-10">
+                <img src="Classified.PNG" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Theodore Togkaridis</h5>
+                    <p class="card-text">Founder of Orbital Burgers, <del>sole possessor of the Soviet magnetic satellite network</del> and creator of this whole website.</p>
+                </div>
+            </div>
+        </div>
     </div>
-<!--ends here***-->	
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<!--ends here-->
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
