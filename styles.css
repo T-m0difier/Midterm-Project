@@ -70,10 +70,6 @@ body.dark-mode .container {
 
 
 /*Card prices that appear when hovering on the cards*/
-
-.card:hover img {
-    transform: scale(1.1);
-}
 .price {
     position: absolute;
     top: 50%;
@@ -90,3 +86,23 @@ body.dark-mode .container {
 .card:hover .price {
     opacity: 1;
 }
+
+/*Dark mode styles for Footer*/
+footer {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+footer.bg-dark {
+    background-color: #343a40 !important; /* Dark gray for dark mode */
+    color: #ffffff; /* White text */
+}
+
+footer a.text-muted {
+    color: #bbb; /* Light gray for links in light mode */
+}
+
+footer a.text-white {
+    color: #fff; /* White for links in dark mode */
+}
+
+
+

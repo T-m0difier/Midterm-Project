@@ -5,14 +5,14 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing some of the Bootstrap themes -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script src="script.js"></script> <!-- Link to the JS file containing the JQuery code-->
     <title>O.M.S. Task Management</title>
 </head>
 <body>
 <!--navbar starts here-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" role="navigation" aria-label="Main navigation">
+        <a class="navbar-brand" href="#" aria-label="O.M.S. Homepage">
             <img src="Flaming Box.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
             <span class="ml-2">O.M.S.</span>
         </a>
@@ -25,7 +25,7 @@
                     <a class="nav-link" href="Index.html">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="Tasks.html">Task Management</a>
+                    <a class="nav-link" href="Tasks.html" aria-current="page">Task Management</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Prices.html">Prices</a>
@@ -37,93 +37,117 @@
                     <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
             </ul>
-            <button id="toggleButton" class="btn btn-secondary ml-3">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
-					<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
-				</svg>
-				Toggle Dark Mode</button>
-		</div>
+            <button id="toggleButton" class="btn btn-secondary ml-3" aria-label="Toggle dark mode">
+                Enable Dark Mode</button>
+        </div>
     </nav>
 <!--ends here-->
+
 <div class="container mt-5">
-<!--Task Management Form starts here-->
-        <h2>Task Management</h2>
-        <form id="task-form" class="mb-4">
-            <div class="form-group">
-                <label for="taskName">Task Name</label>
-                <input type="text" class="form-control" id="taskName" required>
-            </div>
-            <div class="form-group">
-                <label for="taskDescription">Description</label>
-                <textarea class="form-control" id="taskDescription" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="taskDueDate">Due Date</label>
-                <input type="date" class="form-control" id="taskDueDate" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Add Task</button>
-        </form>
+    <!--Task Management Form starts here-->
+    <h2>Task Management</h2>
+    <form id="task-form" class="mb-4" aria-labelledby="taskManagementHeading">
+        <div class="form-group">
+            <label for="taskName">Task Name</label>
+            <input type="text" class="form-control" id="taskName" required aria-required="true" aria-describedby="taskNameHelp">
+            <small id="taskNameHelp" class="form-text text-muted">Enter the name of the task.</small>
+        </div>
+        <div class="form-group">
+            <label for="taskDescription">Description</label>
+            <textarea class="form-control" id="taskDescription" required aria-required="true" aria-describedby="taskDescriptionHelp"></textarea>
+            <small id="taskDescriptionHelp" class="form-text text-muted">Provide a brief description of the task.</small>
+        </div>
+        <div class="form-group">
+            <label for="taskDueDate">Due Date</label>
+            <input type="date" class="form-control" id="taskDueDate" required aria-required="true">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
 
-
-
-
-
-<!--Status Filter starts here-->
+    <!--Status Filter starts here-->
     <div class="mb-3">
         <label for="filterStatus">Filter by Status:</label>
-        <select id="filterStatus" class="form-control w-25 d-inline">
+        <select id="filterStatus" class="form-control w-25 d-inline" aria-label="Filter tasks by status">
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="pending">Pending</option>
         </select>
-<!--ends here-->
+        <!--ends here-->
 
-<!--Sorting section starts here-->
+        <!--Sorting section starts here-->
         <label for="sortTasks" class="ml-2">Sort by:</label>
-        <select id="sortTasks" class="form-control w-25 d-inline">
+        <select id="sortTasks" class="form-control w-25 d-inline" aria-label="Sort tasks">
             <option value="name">Task Name</option>
             <option value="dueDate">Due Date</option>
         </select>
     </div>
+    <!--ends here-->
+
+    <table class="table" aria-labelledby="taskListHeading">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="task-list" role="rowgroup" aria-live="polite">
+            <!-- Tasks will be appended here -->
+        </tbody>
+    </table>
+</div>
 <!--ends here-->
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Task Name</th>
-                    <th>Description</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="task-list">
-                <!-- Tasks will be appended here -->
-            </tbody>
-        </table>
- </div>
-<!--ends here-->
 <!--Modal for the action buttons on tasks starts here -->
-	<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="taskModalLabel">Task Actions</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<button class="btn btn-success complete-task">Complete</button>
-					<button class="btn btn-warning edit-task">Edit</button>
-					<button class="btn btn-danger delete-task">Delete</button>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="taskModalLabel">Task Actions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <button class="btn btn-success complete-task" aria-label="Complete task">Complete</button>
+                <button class="btn btn-warning edit-task" aria-label="Edit task">Edit</button>
+                <button class="btn btn-danger delete-task" aria-label="Delete task">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!--Ends here-->
-	
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--Footer starts here-->
+<footer class="bg-light text-center text-lg-start mt-5" role="contentinfo" aria-label="Footer">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <img src="Flaming Box.png" alt="Company Logo" style="height: 60px;">
+                <p class="text-muted">© 2024 O.M.S. All Rights Reserved.</p>
+            </div>
+
+            <div class="col-lg-4 col-md-12 mb-4">
+                <h5>Contact Us</h5>
+                <p>Email: <a href="mailto:infoOMS@gmail.com">infoOMS@gmail.com</a></p>
+                <p>Follow us on:</p>
+                <a href="https://facebook.com" class="text-muted" target="_blank" rel="noopener noreferrer">Facebook</a> |
+                <a href="https://twitter.com" class="text-muted" target="_blank" rel="noopener noreferrer">Twitter</a> |
+                <a href="https://instagram.com" class="text-muted" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3 bg-light" role="navigation" aria-label="Footer links">
+        <a href="O.M.S. Privacy Policy.txt" download>Privacy Policy</a> | 
+        <a href="O.M.S. Terms of Service.txt" download>Terms of Service</a>
+    </div>
+</footer>
+<!-- ends here-->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

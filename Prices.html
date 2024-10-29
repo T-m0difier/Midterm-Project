@@ -3,22 +3,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing some of the Bootstrap themes -->
+    <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
-    <script src="script.js"></script> <!-- Link to the JS file containing the JQuery code-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="script.js"></script>
     <title>O.M.S. Prices</title>
 </head>
 <body>
 
 <!--navbar starts here-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" role="navigation" aria-label="Main navigation">
         <a class="navbar-brand" href="#">
             <img src="Flaming Box.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
             <span class="ml-2">O.M.S.</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
@@ -38,99 +38,149 @@
                     <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
             </ul>
-            <button id="toggleButton" class="btn btn-secondary ml-3">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
-					<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
-				</svg>
-				Toggle Dark Mode</button>
+            <button id="toggleButton" class="btn btn-secondary ml-3" aria-pressed="false">
+				Enable Dark Mode</button>
 		</div>
     </nav>
 <!--ends here-->
 
-<div class="container mt-5">
+<div class="container mt-5" role="main">
 	<h2 class="text-center">Prices</h2>
 	<p class="justify-text">
-		<strong>How much we charge our services:</strong> Here at Orbital Moving Services we like to charge by taking into consideration
-		how many of our specialized containers you used (each container can hold up to approximately 10-12 different objects).
+		<strong>How much we charge for our services:</strong> Here at Orbital Moving Services we like to charge based on the number of our specialized containers used (each container can hold up to approximately 10-12 different objects).
 	</p>
 	<div class="row justify-content-center">
         <div class="col-md-5">
-            <div class="card mb-5">
-                <img src="Moving Box 1-3.png" class="card-img-top">
+            <div class="card mb-5" role="region" aria-labelledby="container1-3">
+                <img src="Moving Box 1-3.png" class="card-img-top" alt="1-3 Containers">
                 <div class="card-body">
-                    <h5 class="card-title text-center">1-3 Containers</h5>
-                    
+                    <h5 class="card-title text-center" id="container1-3">1-3 Containers</h5>
                 </div>
 				<div class="price">$29.99</div>
             </div>
         </div>
     
         <div class="col-md-5">
-            <div class="card mb-5">
-                <img src="Moving Box 4-6.png" class="card-img-top">
+            <div class="card mb-5" role="region" aria-labelledby="container4-6">
+                <img src="Moving Box 4-6.png" class="card-img-top" alt="4-6 Containers">
                 <div class="card-body">
-                    <h5 class="card-title text-center">4-6 Containers</h5>
-                    
+                    <h5 class="card-title text-center" id="container4-6">4-6 Containers</h5>
                 </div>
 				<div class="price">$39.99</div>
             </div>
 		</div>
 	
         <div class="col-md-5">
-            <div class="card mb-5">
-                <img src="Moving Box 7+.png" class="card-img-top">
+            <div class="card mb-5" role="region" aria-labelledby="container7plus">
+                <img src="Moving Box 7+.png" class="card-img-top" alt="7+ Containers">
                 <div class="card-body">
-                    <h5 class="card-title text-center">7+ Containers</h5>
-                    
+                    <h5 class="card-title text-center" id="container7plus">7+ Containers</h5>
                 </div>
 				<div class="price">$49.99</div>
             </div>
 		</div>
     </div>
 	<p class="justify-text">
-		<strong>Personnel Transportation Services Charge:</strong> Again, with the same logic, it depends on how many 
-		specialized containers are going to be used. The difference here is that we use our specialized personnel transportation containers, 
-		and because we currently have a limited amount of them built, the cost is going to be higher.
-		(each personnel container can hold up to approximately 5-6 people).
+		<strong>Personnel Transportation Services Charge:</strong> Again, based on the number of specialized containers used. The difference here is that we use our specialized personnel transportation containers, and due to a limited number of them, the cost is higher. (Each personnel container can hold approximately 5-6 people).
 	</p>
 	<div class="row justify-content-center">
         <div class="col-md-5">
-            <div class="card mb-5">
-                <img src="Transport Box 1.png" class="card-img-top">
+            <div class="card mb-5" role="region" aria-labelledby="transport1">
+                <img src="Transport Box 1.png" class="card-img-top" alt="1 Personnel Container">
                 <div class="card-body">
-                    <h5 class="card-title text-center">1 Container</h5>
-                    
+                    <h5 class="card-title text-center" id="transport1">1 Container</h5>
                 </div>
 				<div class="price">$49.99</div>
             </div>
         </div>
     
         <div class="col-md-5">
-            <div class="card mb-5">
-                <img src="Transport Box 2.png" class="card-img-top">
+            <div class="card mb-5" role="region" aria-labelledby="transport2">
+                <img src="Transport Box 2.png" class="card-img-top" alt="2 Personnel Containers">
                 <div class="card-body">
-                    <h5 class="card-title text-center">2 Containers</h5>
-                    
+                    <h5 class="card-title text-center" id="transport2">2 Containers</h5>
                 </div>
 				<div class="price">$59.99</div>
             </div>
 		</div>
 	
         <div class="col-md-5">
-            <div class="card mb-5">
-                <img src="Transport Box 3.png" class="card-img-top">
+            <div class="card mb-5" role="region" aria-labelledby="transport3">
+                <img src="Transport Box 3.png" class="card-img-top" alt="3 Personnel Containers">
                 <div class="card-body">
-                    <h5 class="card-title text-center">3 Containers</h5>
-                    
+                    <h5 class="card-title text-center" id="transport3">3 Containers</h5>
                 </div>
 				<div class="price">$69.99</div>
             </div>
 		</div>
     </div>
+<!--Q.P.S. starts here-->
+	<h4 class="text-center">Quick Price Summary</h4>
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>Container Type</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1-3 Containers</td>
+            <td>$29.99</td>
+        </tr>
+        <tr>
+            <td>4-6 Containers</td>
+            <td>$39.99</td>
+        </tr>
+        <tr>
+            <td>7+ Containers</td>
+            <td>$49.99</td>
+        </tr>
+        <tr>
+            <td>1 Personnel Container</td>
+            <td>$49.99</td>
+        </tr>
+        <tr>
+            <td>2 Personnel Containers</td>
+            <td>$59.99</td>
+        </tr>
+        <tr>
+            <td>3 Personnel Containers</td>
+            <td>$69.99</td>
+        </tr>
+    </tbody>
+</table>
+<!--ends here-->
 </div>
 
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<!--Footer starts here-->
+    <footer class="bg-light text-center text-lg-start mt-5" role="contentinfo">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <img src="Flaming Box.png" alt="Company Logo" style="height: 60px;">
+                    <p class="text-muted">© 2024 O.M.S. All Rights Reserved.</p>
+                </div>
+
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:infoOMS@gmail.com">infoOMS@gmail.com</a></p>
+                    <p>Follow us on:</p>
+                    <a href="https://facebook.com" class="text-muted" target="_blank" rel="noopener noreferrer">Facebook</a> |
+                    <a href="https://twitter.com" class="text-muted" target="_blank" rel="noopener noreferrer">Twitter</a> |
+                    <a href="https://instagram.com" class="text-muted" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3 bg-light">
+            <a href="O.M.S. Privacy Policy.txt" download>Privacy Policy</a> | 
+            <a href="O.M.S. Terms of Service.txt" download>Terms of Service</a>
+        </div>
+    </footer>
+<!-- ends here-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-   

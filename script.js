@@ -5,6 +5,9 @@ $(document).ready(function() {
         $('#toggleButton').text('Disable Dark Mode');
         $('.navbar').removeClass('navbar-light bg-light').addClass('navbar-dark bg-dark');
         $('.modal-content').addClass('modal-dark');
+        // Dark mode styles for footer
+        $('footer').removeClass('bg-light').addClass('bg-dark text-white');
+        $('footer a').removeClass('text-muted').addClass('text-white');
     }
 
     // Function to toggle dark mode
@@ -15,6 +18,10 @@ $(document).ready(function() {
         $('.navbar').toggleClass('navbar-light bg-light navbar-dark bg-dark');
         $('.modal-content').toggleClass('modal-dark');
         
+        // Dark mode styles for footer
+        $('footer').toggleClass('bg-light bg-dark text-white');
+        $('footer a').toggleClass('text-muted text-white');
+
         // Set the cookie based on the dark mode state
         Cookies.set('darkMode', $('body').hasClass('dark-mode'), { expires: 7 }); // Expires in 7 days
     }
@@ -24,6 +31,8 @@ $(document).ready(function() {
         toggleDarkMode();
     });
 });
+
+
 
 
 // Contact form submission + pop-up functionality
@@ -53,9 +62,9 @@ $(document).ready(function() {
 
 // Task Management functionalities
 $(document).ready(function() {
-    // Function to load tasks from localStorage
+    // Function to load tasks from cookies
     function loadTasks() {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        const tasks = JSON.parse(Cookies.get('tasks') || '[]');
         tasks.forEach(task => {
             const taskRow = 
                 `<tr class="task-row">
@@ -71,7 +80,7 @@ $(document).ready(function() {
         });
     }
 
-    // Function to save tasks to localStorage
+    // Function to save tasks to cookies
     function saveTasks() {
         const tasks = [];
         $('.task-row').each(function() {
@@ -81,11 +90,11 @@ $(document).ready(function() {
             const status = $(this).find('.status').text().trim();
             tasks.push({ name, description, dueDate, status });
         });
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+        Cookies.set('tasks', JSON.stringify(tasks), { expires: 7 }); // Set the cookie to expire in 7 days
     }
 
     // Load tasks on page load
-    loadTasks(); // Load tasks from localStorage when the page is loaded
+    loadTasks(); // Load tasks from cookies when the page is loaded
 
     // Add Task
     $('#task-form').on('submit', function(e) {
@@ -114,8 +123,9 @@ $(document).ready(function() {
         // Reset the form
         $('#task-form')[0].reset(); 
 
-        // Save the updated task list to localStorage
+        // Save the updated task list to cookies
         saveTasks(); 
+        logActivity(`Task "${taskName}" added.`);
     });
 
     $(document).on('click', '.action-button', function() {
@@ -159,25 +169,82 @@ $(document).ready(function() {
         const row = $('#taskModal').data('row');
         row.find('.status').html('<span class="badge badge-success">Completed</span>');
         $('#taskModal').modal('hide');
-        saveTasks(); // Save updated tasks to localStorage
+        saveTasks(); // Save updated tasks to cookies
+        logActivity(`Task "${row.find('td:eq(0)').text()}" marked as completed.`);
     });
 
     // Edit Task
     $(document).on('click', '.edit-task', function() {
         const row = $('#taskModal').data('row');
-        $('#taskName').val(row.find('td:eq(0)').text());
+        const taskName = row.find('td:eq(0)').text();
+
+        $('#taskName').val(taskName);
         $('#taskDescription').val(row.find('td:eq(1)').text());
         $('#taskDueDate').val(row.find('td:eq(2)').text());
         row.remove();
         $('#taskModal').modal('hide');
-        saveTasks(); // Save updated tasks to localStorage
+        saveTasks(); // Save updated tasks to cookies
+        logActivity(`Task "${taskName}" edited.`);
     });
 
     // Delete Task
     $(document).on('click', '.delete-task', function() {
         const row = $('#taskModal').data('row');
+        const taskName = row.find('td:eq(0)').text();
         row.remove();
         $('#taskModal').modal('hide');
-        saveTasks(); // Save updated tasks to localStorage
+        saveTasks(); // Save updated tasks to cookies
+        logActivity(`Task "${taskName}" deleted.`);
     });
+
+    // Function to load latest tasks from cookies
+    function loadLatestTasks() {
+        const tasks = JSON.parse(Cookies.get('tasks') || '[]');
+        if (tasks.length === 0) {
+            $('#latest-task').html('<p>No recent tasks found.</p>');
+            return;
+        }
+
+        const latestTasks = tasks.slice(-3); // Get the last 3 tasks
+        const taskList = latestTasks.map(task => `
+            <div class="alert alert-info">
+                <strong>${task.name}</strong><br />
+                <em>${task.description}</em><br />
+                Due Date: ${task.dueDate}<br />
+                Status: <span class="badge badge-secondary">${task.status}</span>
+            </div>
+        `).join('');
+
+        $('#latest-task').html(taskList);
+    }
+
+    // Function to log activity
+    function logActivity(activity) {
+        const activities = JSON.parse(Cookies.get('activities') || '[]');
+        activities.push({ activity, time: new Date().toLocaleString() });
+        Cookies.set('activities', JSON.stringify(activities), { expires: 7 }); // Store activities in cookies
+        loadLatestActivities(); // Update latest activities display
+    }
+
+    // Function to load latest activities
+    function loadLatestActivities() {
+        const activities = JSON.parse(Cookies.get('activities') || '[]');
+        if (activities.length === 0) {
+            $('#latest-activity-list').html('<p>No recent activities found.</p>');
+            return;
+        }
+
+        const latestActivities = activities.slice(-3); // Get the last 3 activities
+        const activityList = latestActivities.map(activity => `
+            <div class="alert alert-light">
+                <strong>${activity.time}:</strong> ${activity.activity}
+            </div>
+        `).join('');
+
+        $('#latest-activity-list').html(activityList); // Update the correct element
+    }
+
+    // Load latest tasks and activities on homepage
+    loadLatestTasks(); // Call this function to populate the latest tasks
+    loadLatestActivities(); // Call this function to populate the latest activities
 });
