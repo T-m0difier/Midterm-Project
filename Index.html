@@ -5,15 +5,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing some of the Bootstrap themes -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script src="script.js"></script> <!-- Link to the JS file containing the JQuery code-->
-    <title>Orbital Burgers Home</title>
+    <title>O.M.S. Home</title>
 </head>
 <body>
 <!--navbar starts here-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <a class="navbar-brand" href="#">
-            <img src="flaming Burger.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
-            <span class="ml-2">Orbital Burgers</span>
+            <img src="Flaming Box.png" alt="Company Logo" style="height: 40px; vertical-align: middle;">
+            <span class="ml-2">O.M.S.</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,7 +28,7 @@
                     <a class="nav-link" href="Tasks.html">Task Management</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Menu.html">Menu</a>
+                    <a class="nav-link" href="Prices.html">Prices</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="About.html">About</a>
@@ -46,24 +47,25 @@
 <!--ends here-->
 <!--90% of the webpage starts here-->
     <div class="container">
-        <h1 class="text-center">Welcome to Orbital Burgers</h1>
-        <h4 class="text-center">Where your favorite food comes falling from the sky.</h4>
+        <h1 class="text-center">Welcome to O.M.S.</h1>
+        <h4 class="text-center">Where we let gravity do the work.</h4>
         <p class="justify-text">
-            At Orbital Burgers, we are dedicated to providing you with the best fast food, no matter where you are in the world. <br />
-            Explore our extensive range of burgers, sides, drinks, and desserts by viewing our dedicated 
-            <a href="Menu.html">Menu</a>.
+            At Orbital Moving Services (O.M.S.), we are dedicated to providing you with the best moving services, no matter where you are in the world. <br />
+            Explore our unique system for moving objects around the globe on our 
+            <a href="About.html">About Our Services</a> page.
         </p>
 		
-		<p class="justify-text">Ready to order? Or have you come to help us run this joint? In either case you have to go to
+		<p class="justify-text">Ready to utilize our moving services? Then go to
         <a href="Tasks.html" class="btn btn-secondary">Task Management</a></p>
-		<h3 class="text-center">Latest Activity</h3>
-        <ul id="activityList" class="list-group">
-        </ul>
 		
     </div>
 
+	<div class="container mt-5" id="latest-activity">
+		<h2 class="text-center">Latest Activities</h2>
+		<div id="latest-task"></div>
+	</div>
 
-
+	
 
 
 
